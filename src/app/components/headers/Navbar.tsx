@@ -43,7 +43,7 @@ const data = await res.json();
    
     </div>
     <div className=' border-t border-b '>
- <div className='flex gap-10 m-2 container mx-auto'>
+ <div className='flex gap-10 mt-2 container mx-auto pb-2'>
       {
         data.map((categori:CategoryType,ind:number)=>(
           <h2 key={ind}>
@@ -54,7 +54,7 @@ const data = await res.json();
     </div>
     </div>
     <div>
-      <MarqueePage data={data} />
+      <MarqueePage/>
     </div>
     </div>
   );
