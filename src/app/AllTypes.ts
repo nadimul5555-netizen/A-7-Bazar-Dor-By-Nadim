@@ -37,3 +37,6 @@ export interface CategoryType
     "change": Change,
     "markets":  BazarType[],
   }
+export interface ParamsType{
+  id:string,
+}

@@ -1,7 +1,10 @@
+'use client'
 import React from 'react';
 import DatePage from "@/app/components/Date";
 import heroImage from "@/assets/bazar-hero.png"
 import Image from 'next/image';
+import Link from 'next/link';
+import EveryProduct from "@/app/components/EveryProduct";
 
 const HeroPage = () => {
   return (
@@ -27,11 +30,16 @@ const HeroPage = () => {
           </p>
 
           <button
-            type="button"
-            className="mt-5 rounded-md bg-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:bg-green-700"
-          >
-            সব পণ্য দেখুন
-          </button>
+  onClick={() => {
+    document.getElementById("all-products")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }}
+  className="bg-green-700 rounded-lg px-5 py-3 my-5 text-white"
+>
+  সব পণ্য দেখুন
+</button>
         </div>
 
         {/* Right image */}

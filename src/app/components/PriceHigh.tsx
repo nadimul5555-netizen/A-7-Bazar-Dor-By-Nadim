@@ -20,9 +20,9 @@ const PriceHigh = ({ data = [] }: PriceHighProps) => {
 
       {/* Product Cards */}
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 mx-5 ">
-        {UpData.slice(0,6).map((Data) => (
+        {UpData.sort((a , b)=> b.change.pct-a.change.pct).slice(0,6).map((Data) => (
           <Link
-            href="/"
+            href={`/Details/${Data.id}`}
             key={Data.id}
             className="group rounded-2xl border border-gray-200 bg-[#fbfdfb] p-3 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:border-green-200 hover:shadow-md"
           >
@@ -38,7 +38,7 @@ const PriceHigh = ({ data = [] }: PriceHighProps) => {
                 </h2>
 
                 <p className="text-xs text-gray-500">
-                  প্রতি কেজি
+                  প্রতি {Data.unit === 'kg'? "কেজি":Data.unit === 'piece'? "পিস" :Data.unit === 'litre'? "লিটার":"ডজন"}
                 </p>
               </div>
             </div>

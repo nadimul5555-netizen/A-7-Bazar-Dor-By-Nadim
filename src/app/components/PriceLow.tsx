@@ -12,7 +12,7 @@ const PriceLowPage = ({ data = [] }: PriceLowPageProps) => {
     <section className="mx-10 container mx-auto ">
       
       <div className="m-4 flex items-center gap-2 ">
-        <span className="text-sm font-bold text-green-500">▲</span>
+        <span className="text-sm font-bold text-green-500">▼</span>
         <h1 className="text-2xl font-bold text-gray-800 ">
           আজকে দাম কমেছে
         </h1>
@@ -20,9 +20,9 @@ const PriceLowPage = ({ data = [] }: PriceLowPageProps) => {
 
      
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 mx-5 ">
-        {UpData.slice(0,6).map((Data) => (
+        {UpData.sort((a , b)=> a.change.pct-b.change.pct).slice(0,6).map((Data) => (
           <Link
-            href="/"
+            href={`/Details/${Data.id}`}
             key={Data.id}
             className="group rounded-2xl border border-gray-200 bg-[#fbfdfb] p-3 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:border-green-200 hover:shadow-md"
           >
@@ -38,7 +38,7 @@ const PriceLowPage = ({ data = [] }: PriceLowPageProps) => {
                 </h2>
 
                 <p className="text-xs text-gray-500">
-                  প্রতি কেজি
+                  প্রতি {Data.unit === 'kg'? "কেজি":Data.unit === 'piece'? "পিস" :Data.unit === 'litre'? "লিটার":"ডজন"}
                 </p>
               </div>
             </div>
@@ -60,7 +60,7 @@ const PriceLowPage = ({ data = [] }: PriceLowPageProps) => {
               
               <div className="m-2 flex items-center gap-1 rounded-full bg-green-100 px-2 py-1">
                 <span className="text-[10px] text-green-500">
-                  ▲
+                  ▼
                 </span>
 
                 <span className="text-xs font-semibold text-green-700">
