@@ -95,8 +95,8 @@ export function SignInPage() {
             className="h-auto min-h-11 w-full justify-center gap-2 rounded-lg px-3 py-3 text-sm whitespace-normal"
             variant="tertiary"
           >
-            <Icon icon="mdi:github" className="shrink-0 text-lg" />
-            <span>GitHub দিয়ে চালিয়ে যান</span>
+            <Icon icon="mdi:facebook" className="shrink-0 text-lg" />
+            <span>Facebook দিয়ে চালিয়ে যান</span>
           </Button>
         </div>
 

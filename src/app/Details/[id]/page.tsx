@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { ParamsType, PonnoType } from "@/app/AllTypes";
+import { notFound } from "next/navigation";
 
 type ParamsPageProps = {
   params: Promise<ParamsType>;
@@ -18,7 +19,7 @@ const ProductContent = async ({ params }: ParamsPageProps) => {
   );
 
   if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    notFound()
   }
 
   const data: PonnoType = await res.json();

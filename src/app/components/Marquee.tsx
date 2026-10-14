@@ -33,21 +33,21 @@ const MarqueePage =async () => {
   {Data.change.dir === "up" && (
     <>
       <span className="text-red-500 ">▲</span>{" "}
-      {Data.change.pct.toLocaleString("bn-BD")}
+      {Data.change.pct.toLocaleString("bn-BD")} %
     </>
   )}
 
   {Data.change.dir === "down" && (
     <>
       <span className="text-green-500">▼</span>{" "}
-      <span className="text-green-500">{Data.change.pct.toLocaleString("bn-BD")}</span>
+      <span className="text-green-500">{Data.change.pct.toLocaleString("bn-BD")} %</span>
     </>
   )}
 
   {Data.change.dir === "flat" && (
     <>
       <span className="text-gray-400">—</span>{" "}
-      {Data.change.pct.toLocaleString("bn-BD")}
+      {Data.change.pct.toLocaleString("bn-BD")} %
     </>
   )}
 </span>
