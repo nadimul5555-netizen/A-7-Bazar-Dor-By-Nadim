@@ -10,6 +10,7 @@ import Link from 'next/link';
 
 import PathName from '../PathName';
 import { Suspense } from 'react';
+import ButtonPage from '../Buttons';
 
 
 
@@ -42,13 +43,12 @@ const data = await res.json();
      </div>
       </div>
       <div className='flex justify-end m-5'>
-    <Link href={'/sign-in'}><h1 className='my-2 mx-6'>সাইন ইন</h1></Link>
-    <Link href={'/sign-up'}><Button  className=' bg-green-700 rounded-lg'>সাইন আপ</Button></Link>
+    <ButtonPage/>
       </div>
     </div>
    
     </div>
-    <div className=' border-gray-100 border-b '>
+    <div className=' border-gray-100 border-b border-t '>
  <div >
   <Suspense fallback={<div className="h-10" />}>
     <PathName data={data} />

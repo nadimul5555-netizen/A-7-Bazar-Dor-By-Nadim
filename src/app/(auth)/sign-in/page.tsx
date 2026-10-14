@@ -26,12 +26,17 @@ export function SignInPage() {
       router.push("/");
     }
   };
+  const signIn = async ()=>{
+    const Data = await authClient.signIn.social({
+      provider: 'google'
+    })
+  }
 
   return (
     <div className="flex min-h-screen flex-col items-center  px-4 pt-8 text-[#303b32]">
       <h1 className="text-2xl font-bold">সাইন ইন</h1>
       <p className="mt-1 text-center text-sm text-gray-500">বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।</p>
-      <div className="mt-6 w-full max-w-[402px] rounded-2xl border border-[#e1e8e1] bg-[#fbfdfb] p-6">
+      <div className="mt-6 w-full max-w-[500px] rounded-2xl border border-[#e1e8e1] bg-[#fbfdfb] p-6">
         <Form className="w-full" onSubmit={onSubmit}>
           <FieldGroup className="gap-4">
             <TextField isRequired name="email" type="email">
@@ -53,7 +58,7 @@ export function SignInPage() {
           <span className="h-px flex-1 bg-[#e1e8e1]"></span>
         </div>
        <div className="grid grid-cols-2 gap-2">
-                  <Button className="w-full rounded-lg" variant="tertiary">
+                  <Button onClick={signIn} className="w-full rounded-lg" variant="tertiary">
                <Icon icon="devicon:google" />
                Google দিয়ে চালিয়ে যান
              </Button>

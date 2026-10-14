@@ -21,6 +21,7 @@ export function SignUpPage() {
     email: data.email as string,
     password: data.password as string,
 
+     
 });
 if(resData){
   toast.success(`${data.name} Your Account create Successfully`)
@@ -30,6 +31,11 @@ if(error){
 }
 router.push("/")
   };
+const signIn = async ()=>{
+  const Data = await authClient.signIn.social({
+    provider: 'google'
+  })
+}
 
   return (
     <div className="container mx-auto flex min-h-screen flex-col items-center px-4 pt-8 text-[#303b32]">
@@ -67,7 +73,7 @@ router.push("/")
           <span className="h-px flex-1 bg-[#e1e8e1]"></span>
         </div>
         <div className="grid grid-cols-2 gap-2">
-           <Button className="w-full rounded-lg" variant="tertiary">
+           <Button onClick={signIn} className="w-full rounded-lg" variant="tertiary">
         <Icon icon="devicon:google" />
         Google দিয়ে চালিয়ে যান
       </Button>

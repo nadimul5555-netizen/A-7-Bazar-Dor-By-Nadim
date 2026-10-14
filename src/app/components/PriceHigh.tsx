@@ -64,7 +64,7 @@ const PriceHigh = ({ data = [] }: PriceHighProps) => {
                 </span>
 
                 <span className="text-xs font-semibold text-red-500">
-                  {Data.change.pct}%
+                  {Data.change.pct.toLocaleString("bn-BD")}%
                 </span>
               </div>
             </div>

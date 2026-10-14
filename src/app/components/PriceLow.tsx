@@ -64,7 +64,7 @@ const PriceLowPage = ({ data = [] }: PriceLowPageProps) => {
                 </span>
 
                 <span className="text-xs font-semibold text-green-700">
-                  {Data.change.pct}%
+                  {Data.change.pct.toLocaleString("bn-BD")}%
                 </span>
               </div>
             </div>
