@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "@better-auth/mongo-adapter";
 
 const client = new MongoClient(process.env.MONGODB_URI as string);
-const db = client.db('assignment-7-bazardor');
+const db = client.db('assignment-7-bazardor-by-nadim');
 
 export const auth = betterAuth({
     emailAndPassword: { 
@@ -14,10 +14,7 @@ export const auth = betterAuth({
             clientId: process.env.GOOGLE_CLIENT_ID as string, 
             clientSecret: process.env.GOOGLE_CLIENT_SECRET as string, 
         }, 
-         facebook: { 
-            clientId: process.env.FACEBOOK_CLIENT_ID as string, 
-            clientSecret: process.env.FACEBOOK_CLIENT_SECRET as string, 
-        }, 
+        
     },
   database: mongodbAdapter(db, {
     client,
