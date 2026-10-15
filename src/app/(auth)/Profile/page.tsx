@@ -1,17 +1,39 @@
 
 "use client";
 
-import { signOut, useSession } from "@/lib/auth-client";
+import { authClient, signOut, useSession } from "@/lib/auth-client";
 import ProfileLogo from "@/assets/icons8-test-account-48.png";
 import SignOutLogo from "@/assets/icons8-sign-out-48.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { Form } from "@heroui/react";
 
 const ProfilePage = () => {
   const router = useRouter();
   const { data: session } = useSession();
 
+   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.currentTarget);
+  const data = Object.fromEntries(formData.entries());
+
+
+    const result = await authClient.updateUser({
+      name: data.name as string,
+    });
+
+    if (result.error) {
+      toast.error("নাম আপডেট করা যায়নি!");
+      return;
+    }
+
+    toast.success("প্রোফাইল সফলভাবে আপডেট হয়েছে!");
+    router.refresh();
+  }
+    
+ 
   const handleSignOut = async () => {
     await signOut({
       fetchOptions: {
@@ -23,6 +45,10 @@ const ProfilePage = () => {
       },
     });
   };
+  
+
+  
+ 
 
   return (
     <div className="container mx-auto min-h-screen px-3 py-6 text-[#27332a] sm:px-5 sm:py-8 md:px-6 md:py-10">
@@ -55,21 +81,26 @@ const ProfilePage = () => {
         </div>
         <div className="mt-4 rounded-xl border border-[#e1e8e1] bg-[#fbfdfb] p-4 sm:p-5 md:p-6">
           <h2 className="text-xl font-bold sm:text-2xl">তথ্য</h2>
+          <Form onSubmit={handleSubmit}>
+
           <div className="mt-5">
             <label className="mb-2 block text-xs font-medium">নাম</label>
             <input
               type="text"
+              name="name"
               defaultValue={session?.user.name || ""}
               placeholder="আপনার নাম লিখুন"
               className="h-11 w-full rounded-md border border-[#e1e8e1] bg-transparent px-3 text-sm outline-none transition focus:border-green-600 focus:ring-1 focus:ring-green-600 sm:h-12"
             />
           </div>
           <button
-            type="button"
+          
+            type="submit"
             className="my-5 h-11 w-full rounded-md bg-[#07883f] text-xs font-medium text-white shadow-md transition hover:bg-green-700 sm:my-6 sm:h-12"
           >
             আপডেট
           </button>
+              </Form>
         </div>
       </div>
     </div>

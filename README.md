@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BazarDor-By-Nadim
 
-## Getting Started
+BazarDor is a web application that helps users check the prices of daily essential products across Bangladesh.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Product Categories:** Browse products by different categories.
+- **Current Prices:** Check the latest available prices of essential products.
+- **Price Comparison:** Compare current prices with previous prices to understand price changes.
+- **Division-Wise Prices:** Explore product prices across all 8 divisions of Bangladesh.
+- **Price Trends:** Identify products whose prices are increasing or decreasing.
+- **Product Details:** View product information, including minimum, maximum, and average prices.
+- **Price Sorting:** Sort products by price from low to high or high to low.
+- **User Authentication:** Sign in or create an account using email and password, Google, or GitHub.
+- **Profile Update:** Update your profile information.
+- **Protected Routes:** Restrict access to specific pages to authenticated users.
+- **Responsive Design:** Use the website on mobile phones, tablets, and desktop computers.
+- **Loading Skeletons:** Display loading placeholders while product data is being fetched.
+- **Toast Notifications:** Show notifications for authentication, validation, and other actions.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js
+- TypeScript
+- Tailwind CSS
+- BetterAuth
+- Git & GitHub
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

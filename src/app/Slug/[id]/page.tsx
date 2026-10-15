@@ -21,7 +21,6 @@ const ProductContent = async ({ params }: ParamsPageProps) => {
   if (!res.ok) {
     throw new Error("Failed to fetch products");
   }
-
   const data: PonnoType[] = await res.json();
 
   const response = await fetch(

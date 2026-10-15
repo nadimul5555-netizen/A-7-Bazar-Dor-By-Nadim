@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { Button, FieldError, FieldGroup, Form, IconCalendar, Input, Label, TextField, Toast } from "@heroui/react";
 import {Icon} from "@iconify/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
@@ -35,6 +36,7 @@ const signIn = async ()=>{
   const Data = await authClient.signIn.social({
     provider: 'google'
   })
+  
 }
 
   return (
@@ -73,20 +75,16 @@ const signIn = async ()=>{
           <span className="h-px flex-1 bg-[#e1e8e1]"></span>
         </div>
       
-<div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+<div className="grid grid-cols-1 gap-3 ">
   <Button onClick={signIn} className="h-auto min-h-11 w-full justify-center gap-2 rounded-lg px-3 py-3 text-sm whitespace-normal" variant="tertiary">
     <Icon icon="devicon:google" className="shrink-0 text-lg" />
     <span>Google দিয়ে চালিয়ে যান</span>
   </Button>
 
-  <Button className="h-auto min-h-11 w-full justify-center gap-2 rounded-lg px-3 py-3 text-sm whitespace-normal" variant="tertiary">
-    <Icon icon="mdi:facebook" className="shrink-0 text-lg" />
-    <span>Facebook দিয়ে চালিয়ে যান</span>
-  </Button>
 </div>
 
 
-        <p className="mt-4 text-center text-xs text-gray-500">অ্যাকাউন্ট আছে? <button type="button" className="font-medium text-[#07883f] hover:underline">সাইন ইন করুন</button></p>
+        <p className="mt-4 text-center text-xs text-gray-500">অ্যাকাউন্ট আছে? <Link href={'/sign-in'}><button  type="button" className="font-medium text-[#07883f] hover:underline">সাইন ইন করুন</button></Link></p>
       </div>
       <p className="mt-4 text-xs text-gray-500">← পেছনে ফিরে যান</p>
     </div>

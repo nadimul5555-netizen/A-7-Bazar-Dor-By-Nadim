@@ -53,12 +53,12 @@ const AfterSortData = handleSorting()
           মোট {data.length}টি পণ্য দেখানো হচ্ছে
         </h1>
 
-        <div className="container mx-auto grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="container mx-auto my-5  grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {AfterSortData.map((Data) => (
             <Link
             href={`/Details/${Data.id}`}
             key={Data.id}
-            className="group rounded-2xl border border-gray-200 bg-[#fbfdfb] p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-green-200 hover:shadow-md"
+            className=" group rounded-2xl border border-gray-200 bg-[#fbfdfb] p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-green-200 hover:shadow-md"
             >
               <div className="m-2 flex items-center gap-3">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f0f5f0] text-2xl transition-transform duration-300 group-hover:scale-105">
